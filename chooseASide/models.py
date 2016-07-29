@@ -14,6 +14,7 @@ class Topic(models.Model):
     is_company = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.CharField(max_length=30)
+    expired = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
@@ -32,7 +33,8 @@ class Thought(models.Model):
     pro_or_con = models.BooleanField(help_text="True is for and on the left, False is against and on the right")
     created = models.DateTimeField(auto_now_add=True)
     identifier1 = models.CharField(help_text="Ip address of the user", max_length=200, default="")
-    identifier2 = models.CharField(help_text="Device user is posting from", max_length=200, default="")
+    identifier2 = models.CharField(help_text="Device user is posting from", max_length=500, default="")
+    expired = models.BooleanField(default=False)
 
     def __str__(self):
         return self.opinion[:30]

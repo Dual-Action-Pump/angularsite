@@ -1,7 +1,9 @@
 import json
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from django.db.models import Max
+
+from ipware.ip import get_ip
+
 
 
 from . import models
@@ -30,7 +32,7 @@ def home(request):
 
 def topic(request, topic):
     print(topic)
-    current_topic = models.Topic.objects.get(title=topic.replace("-", " "))
+    current_topic = models.Topic.objects.get(title__icontains=topic.replace("-", " "))
     pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic).order_by("-score")
     con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic).order_by("-score")
     total = pro_views.count() + con_views.count()
@@ -52,8 +54,9 @@ def create_angle(request, topic):
     if request.method == "POST":
         form = forms.ThoughtForm(request.POST)
         if form.is_valid():
-            if request.META.get("REMOTE_ATTR"):
-                iden1 = request.META.get("REMOTE_ATTR")
+            ip = get_ip(request)
+            if ip is not None:
+                iden1 = str(ip)
             else:
                 iden1 = ""
             if request.META.get("HTTP_USER_AGENT"):
