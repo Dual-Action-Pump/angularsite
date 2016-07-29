@@ -34,8 +34,12 @@ def topic(request, topic):
     pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic)
     con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic)
     total = pro_views.count() + con_views.count()
-    pro_percent = (pro_views.count()/total)*100
-    con_percent = (con_views.count()/total)*100
+    if total == 0:
+        pro_percent = 0
+        con_percent = 0
+    else:
+        pro_percent = (pro_views.count()/total)*100
+        con_percent = (con_views.count()/total)*100
     return render(request, "chooseASide/topic.html", {'topic': current_topic,
                                                       'pros': pro_views,
                                                       'cons': con_views,
