@@ -25,7 +25,9 @@
                 <p class="card-text">{{topic.description}}</p>
                 <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
                 <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thought</a>
-
+                {% if topic.total_angles %}
+                    <p><strong>Angles:</strong> {{topic.total_angles}}</p>
+                {% endif %}
             </div>
         </div>
     {% endfor %}

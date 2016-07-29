@@ -3,11 +3,9 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
-
+from django.db.models import Count
 
 from ipware.ip import get_ip
-
-
 
 from . import models
 from . import forms
@@ -24,7 +22,7 @@ def home(request):
     print(request.META.get("HTTP_USER_AGENT"))  # this
     print("____")
     print(request.META.get("REMOTE_ATTR"))
-    all_topics = models.Topic.objects.all()
+    all_topics = models.Topic.objects.all().annotate(total_angles=Count('thought', distinct=True))
     if request.method == "POST":
         form = forms.CreateTopicForm(request.POST)
         if form.is_valid():
@@ -36,7 +34,7 @@ def home(request):
         form = forms.CreateTopicForm()
 
     return render(request, "chooseASide/topic_list.html", {"topics": all_topics,
-                                                               "form": form})
+                                                               "form": form,})
 
 
 def topic(request, topic):
