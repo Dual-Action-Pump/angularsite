@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import re
 
 from django.db import models
 
@@ -18,7 +19,9 @@ class Topic(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = self.title.replace(" ", "-")
+        regex = re.compile('[\',_.?"!]')
+        self.slug = regex.sub("", self.title.replace(" ", "-"))
+
         super(Topic, self).save(*args, **kwargs)
 
 
