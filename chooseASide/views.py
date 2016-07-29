@@ -31,8 +31,8 @@ def home(request):
 def topic(request, topic):
     print(topic)
     current_topic = models.Topic.objects.get(title=topic.replace("-", " "))
-    pro_views = models.Topic.objects.filter(pro_or_con=True).aggregate(Max('score'))
-    con_views = models.Topic.objects.filter(pro_or_con=False).aggregate(Max('score'))
+    pro_views = models.Thought.objects.filter(pro_or_con=True).aggregate(Max('score'))
+    con_views = models.Thought.objects.filter(pro_or_con=False).aggregate(Max('score'))
     print(current_topic.top_con)
     return render(request, "chooseASide/topic.html", {'topic': current_topic, })
 
