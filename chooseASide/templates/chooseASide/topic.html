@@ -3,7 +3,7 @@
 {%block content%}
 <div class="row">
   <div class="col-sm-12">
-  <h2>Basic Progress Bar</h2>
+    <h2><a href="{% url 'sides:create_angle'  topic=topic.slug %}">Post about {{topic.title}}</a></h2>
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:{{pro_percent}}%;background-color:red;">
         Pro
