@@ -6,9 +6,9 @@ from django.core.exceptions import ValidationError
 
 
 class ThoughtForm(forms.Form):
-
+    PRO_OR_CON = ((1, 'Pro'), (0, 'Con'),)
     opinion = forms.CharField(widget=forms.Textarea)
-    pro_or_con = forms.BooleanField(help_text="Check for agree, leave blank if you disagree")
+    pro_or_con = forms.ChoiceField(choices=PRO_OR_CON)
 
 
 class CreateTopicForm(forms.Form):

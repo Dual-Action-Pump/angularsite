@@ -31,11 +31,11 @@ def home(request):
 def topic(request, topic):
     print(topic)
     current_topic = models.Topic.objects.get(title=topic.replace("-", " "))
-    pro_views = models.Thought.objects.filter(pro_or_con=True)
-    con_views = models.Thought.objects.filter(pro_or_con=False)
+    pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic)
+    con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic)
     total = pro_views.count() + con_views.count()
-    pro_percent = pro_views.count()/total
-    con_percent = con_views.count()/total
+    pro_percent = (pro_views.count()/total)*100
+    con_percent = (con_views.count()/total)*100
     return render(request, "chooseASide/topic.html", {'topic': current_topic,
                                                       'pros': pro_views,
                                                       'cons': con_views,
