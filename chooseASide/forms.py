@@ -9,3 +9,4 @@ class ThoughtForm(forms.Form):
 
 class CreateTopic(forms.Form):
     title = forms.CharField(required=True)
+    description = forms.CharField(max_length=100,help_text="A description of the topic")
