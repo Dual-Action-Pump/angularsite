@@ -1,6 +1,9 @@
 import json
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import get_object_or_404, render_to_response
+from django.template import RequestContext
+
 
 from ipware.ip import get_ip
 
@@ -8,6 +11,12 @@ from ipware.ip import get_ip
 
 from . import models
 from . import forms
+
+def handler404(request):
+    response = render_to_response('chooseASide/404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
 
 
 # Create your views here.
@@ -32,7 +41,7 @@ def home(request):
 
 def topic(request, topic):
     print(topic)
-    current_topic = models.Topic.objects.get(title__icontains=topic.replace("-", " "))
+    current_topic = models.Topic.objects.get_object_or_404(title__contains=topic.replace("-", " "))
     pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic).order_by("-score")
     con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic).order_by("-score")
     total = pro_views.count() + con_views.count()
@@ -50,7 +59,7 @@ def topic(request, topic):
 
 
 def create_angle(request, topic):
-    topic_in_question = models.Topic.objects.get(title=topic.replace('-', ' '))
+    topic_in_question = models.Topic.objects.get_object_or_404(title=topic.replace('-', ' '))
     if request.method == "POST":
         form = forms.ThoughtForm(request.POST)
         if form.is_valid():
@@ -82,7 +91,7 @@ def create_angle(request, topic):
 
 def increment_score(request,pk):
     if request.method == 'POST':
-        to_increment = models.Thought.objects.get(pk=pk)
+        to_increment = models.Thought.objects.get_object_or_404(pk=pk)
         print(to_increment.score)
         to_increment.score += 1
         to_increment.save()
