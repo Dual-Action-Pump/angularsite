@@ -75,26 +75,28 @@ WSGI_APPLICATION = 'angledAttitudes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    #
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     # 'NAME': 'angles',
-    #     # 'USER': 'root',
-    #     # 'PASSWORD': 'deathdove',
-    #     # 'HOST': 'localhost',
-    #     # 'PORT': '3306',
-    # }
-}
-
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES = {
+
+    #
+    # # 'default': {
+    # #     'ENGINE': 'django.db.backends.sqlite3',
+    # #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # # }
+    # #
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     #     # 'NAME': 'angles',
+    #     #     # 'USER': 'root',
+    #     #     # 'PASSWORD': 'deathdove',
+    #     #     # 'HOST': 'localhost',
+    #     #     # 'PORT': '3306',
+    # }
+    'default': {}
+}
 DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
