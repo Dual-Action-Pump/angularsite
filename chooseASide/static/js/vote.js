@@ -2,13 +2,14 @@ function sendVote(pk, topicURL) {
     var score = $("#"+pk+"_score");
     console.log(score);
     var opinion = $("#"+pk);
+    opinion.attr('onclick', '');
     var csrftoken = getCookie('csrftoken');
     $.post( topicURL, { vote: pk, csrfmiddlewaretoken: csrftoken}, function(data){
         var parsed = JSON.parse(data);
         score.text(parsed['current_score']);
         console.log(data['current_score']);
         opinion.text("Got it!");
-        opinion.attr('onclick', '');
+
     });
 }
 
