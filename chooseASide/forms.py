@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError
 
 class ThoughtForm(forms.Form):
     PRO_OR_CON = ((1, 'Pro'), (0, 'Con'),)
-    opinion = forms.CharField(widget=forms.Textarea)
+    opinion = forms.CharField(widget=forms.Textarea, max_length=6000)
     pro_or_con = forms.ChoiceField(choices=PRO_OR_CON)
 
 

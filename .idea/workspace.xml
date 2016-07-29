@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chooseASide/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.087633885">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -43,11 +43,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chooseASide/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -59,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/chooseASide/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
               <folding>
                 <element signature="e#28#52#0" expanded="true" />
               </folding>
@@ -67,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chooseASide/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4741967">
-              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -95,8 +105,8 @@
       <file leaf-file-name="topic_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/topic_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -147,7 +157,6 @@
         <option value="$PROJECT_DIR$/choseASide/static/css/styles.css" />
         <option value="$PROJECT_DIR$/choseASide/templates/choseASide/topic.html" />
         <option value="$PROJECT_DIR$/chooseASide/templates/choseASide/topic.html" />
-        <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/base.html" />
         <option value="$PROJECT_DIR$/chooseASide/static/css/styles.css" />
         <option value="$PROJECT_DIR$/chooseASide/admin.py" />
         <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/create_angle.html" />
@@ -155,12 +164,13 @@
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/angledAttitudes/settings.py" />
         <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/topic.html" />
+        <option value="$PROJECT_DIR$/chooseASide/views.py" />
+        <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/base.html" />
+        <option value="$PROJECT_DIR$/chooseASide/forms.py" />
         <option value="$PROJECT_DIR$/chooseASide/models.py" />
         <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/topic_list.html" />
         <option value="$PROJECT_DIR$/chooseASide/urls.py" />
-        <option value="$PROJECT_DIR$/chooseASide/templates/chooseASide/topic.html" />
-        <option value="$PROJECT_DIR$/chooseASide/forms.py" />
-        <option value="$PROJECT_DIR$/chooseASide/views.py" />
       </list>
     </option>
   </component>
@@ -541,14 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31405783">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chooseASide/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3359299">
@@ -605,34 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chooseASide/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chooseASide/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/topic_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/topic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
@@ -644,22 +618,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chooseASide/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/chooseASide/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <caret line="9" column="68" selection-start-line="9" selection-start-column="68" selection-end-line="9" selection-end-column="68" />
           <folding>
             <element signature="e#28#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chooseASide/views.py">
+    <entry file="file://$PROJECT_DIR$/chooseASide/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4741967">
-          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chooseASide/templates/chooseASide/topic_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chooseASide/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.087633885">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

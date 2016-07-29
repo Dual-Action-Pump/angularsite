@@ -16,7 +16,9 @@
     {% for topic in topics %}
         <div class="col-sm-4">
             <div class="card card-block">
-                <h4 class="card-title">{{topic.title}}</h4>
+                  <div class="card-header">
+                     <h4>{{topic.title}}</h4>
+                  </div>
                 <p class="card-text">{{topic.description}}</p>
                 <a class="card-link" href="{% url 'sides:create_angle'  topic=topic.slug %}"> View Topic</a>
 
