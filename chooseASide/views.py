@@ -52,6 +52,14 @@ def create_angle(request, topic):
     if request.method == "POST":
         form = forms.ThoughtForm(request.POST)
         if form.is_valid():
+            if request.META.get("REMOTE_ATTR"):
+                iden1 = request.META.get("REMOTE_ATTR")
+            else:
+                iden1 = ""
+            if request.META.get("HTTP_USER_AGENT"):
+                iden2 = request.META.get("HTTP_USER_AGENT")
+            else:
+                iden2 = ""
             if form.cleaned_data['pro_or_con'] == "0":
                 pro_or_con = False
                 print("should be false")
@@ -59,7 +67,9 @@ def create_angle(request, topic):
                 pro_or_con = True
             new_opinion = models.Thought(topic=topic_in_question,
                                          opinion=form.cleaned_data['opinion'],
-                                         pro_or_con=pro_or_con)
+                                         pro_or_con=pro_or_con,
+                                         identifier1=iden1,
+                                         identifier2=iden2)
             new_opinion.save()
             return HttpResponseRedirect('/'+topic+'/angles')
     else:
