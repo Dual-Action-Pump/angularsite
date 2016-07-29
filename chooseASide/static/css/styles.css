@@ -8,3 +8,9 @@ body {
 .card {
     border-color: black
 }
+
+.btn {
+    white-space:normal !important;
+
+    max-width: 100%;
+}
