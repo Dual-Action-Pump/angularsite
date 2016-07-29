@@ -6,7 +6,7 @@ function sendVote(pk, topicURL) {
     var csrftoken = getCookie('csrftoken');
     $.post( topicURL, { vote: pk, csrfmiddlewaretoken: csrftoken}, function(data){
         var parsed = JSON.parse(data);
-        score.text(parsed['current_score']);
+        score.text("Score: "+parsed['current_score']);
         console.log(data['current_score']);
         opinion.text("Got it!");
 
