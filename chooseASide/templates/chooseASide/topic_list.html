@@ -1,8 +1,18 @@
 {%extends "chooseASide/base.html"%}
 
 {% block content %}
+<br>
 <div class="row">
-
+    <div class="col-sm-12 text-center">
+        <h2>Add a Topic</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" value="submit" class="btn">Submit!</button>
+        </form>
+    </div>
+</div>
+<div class="row">
     {% for topic in topics %}
         <div class="col-sm-4">
             <div class="card card-block">
