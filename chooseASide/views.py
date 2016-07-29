@@ -39,7 +39,7 @@ def home(request):
 
 def topic(request, topic):
     print(topic)
-    current_topic = models.Topic.objects.get_object_or_404(title__contains=topic.replace("-", " "))
+    current_topic = get_object_or_404(models.Topic, title__contains=topic.replace("-", " "))
     pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic).order_by("-score")
     con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic).order_by("-score")
     total = pro_views.count() + con_views.count()
@@ -57,7 +57,7 @@ def topic(request, topic):
 
 
 def create_angle(request, topic):
-    topic_in_question = models.Topic.objects.get_object_or_404(title=topic.replace('-', ' '))
+    topic_in_question = get_object_or_404(models.Topic, title=topic.replace('-', ' '))
     if request.method == "POST":
         form = forms.ThoughtForm(request.POST)
         if form.is_valid():
@@ -87,9 +87,10 @@ def create_angle(request, topic):
     return render(request, "chooseASide/create_angle.html", {"form": form,
                                                              "topic": topic_in_question})
 
+
 def increment_score(request,pk):
     if request.method == 'POST':
-        to_increment = models.Thought.objects.get_object_or_404(pk=pk)
+        to_increment = get_object_or_404(models.Thought,pk=pk)
         print(to_increment.score)
         to_increment.score += 1
         to_increment.save()
