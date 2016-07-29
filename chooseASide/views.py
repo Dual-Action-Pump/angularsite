@@ -67,9 +67,8 @@ def create_angle(request, topic):
     return render(request, "chooseASide/create_angle.html", {"form": form,
                                                              "topic": topic_in_question})
 
-def increment_score(request):
+def increment_score(request,pk):
     if request.method == 'POST':
-        pk = request.POST.get('pk')
         to_increment = models.Thought.objects.get(pk=pk)
         print(to_increment.score)
         to_increment.score += 1

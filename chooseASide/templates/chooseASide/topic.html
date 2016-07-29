@@ -33,7 +33,7 @@
     <div class="card card-block">
         <h6>Score: {{con.score}}</h6>
         <p>{{con.opinion}}</p>
-        <button class="btn" id="{{con.pk}}" onclick="sendVote({{con.pk}}, '{% url 'sides:score'  topic=topic.slug %}');">Like this thought? Click to vote for it</button>
+        <button class="btn" id="{{con.pk}}" onclick="sendVote({{con.pk}}, '{% url 'sides:score'  pk=con.pk %}');">Like this thought? Click to vote for it</button>
     </div>
     {% endfor %}
   </div>
