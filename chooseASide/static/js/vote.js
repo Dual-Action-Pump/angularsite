@@ -8,6 +8,7 @@ function sendVote(pk, topicURL) {
         score.text(parsed['current_score']);
         console.log(data['current_score']);
         opinion.text("Got it!");
+        opinion.attr('onclick', '');
     });
 }
 
