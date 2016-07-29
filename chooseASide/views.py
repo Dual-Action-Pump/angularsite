@@ -15,14 +15,14 @@ def home(request):
     print(request.META.get("REMOTE_ATTR"))
     all_topics = models.Topic.objects.all()
     if request.method == "POST":
-        form = forms.CreateTopic(request.POST)
+        form = forms.CreateTopicForm(request.POST)
         if form.is_valid():
             new_topic = models.Topic(title=form.cleaned_data['title'],
                                      description=form.cleaned_data['description'])
             new_topic.save()
             return HttpResponseRedirect("/")
     else:
-        form = forms.CreateTopic()
+        form = forms.CreateTopicForm()
 
     return render(request, "chooseASide/topic_list.html", {"topics": all_topics,
                                                                "form": form})
