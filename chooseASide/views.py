@@ -17,7 +17,8 @@ def home(request):
     if request.method == "POST":
         form = forms.CreateTopic(request.POST)
         if form.is_valid():
-            new_topic = models.Topic(title=form.cleaned_data['title'])
+            new_topic = models.Topic(title=form.cleaned_data['title'],
+                                     description=form.cleaned_data['description'])
             new_topic.save()
             return HttpResponseRedirect("/")
     else:
