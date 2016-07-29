@@ -1,0 +1,20 @@
+{%extends "chooseASide/base.html"%}
+
+{% block content %}
+<div class="row">
+    <br>
+    <h1 class="text-center">{{topic.title}}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-6">
+                <div class="form">
+                {{form.as_table}}
+                </div>
+            <button type="submit" value="Submit" class="btn">Post</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{%extends "chooseASide/base.html"%}
+
+{% block content %}
+<div class="row">
+
+    {% for topic in topics %}
+        <div class="col-sm-4">
+            <div class="card card-block">
+                <h4 class="card-title">{{topic.title}}</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a class="card-link" href="{% url 'sides:create_angle'  topic=topic.slug %}"> View Topic</a>
+
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

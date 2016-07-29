@@ -1,0 +1,13 @@
+{%extends "chooseASide/base.html"%}
+
+{%block content%}
+
+  <h2>Basic Progress Bar</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10" style="width:60%;background-color:red;">
+      one side
+    </div><div class="progress-bar progress-bar-info" role="progressbar" style="width:40%;background-color:blue;">
+    other side
+  </div>
+  </div>
+    {%endblock%}
