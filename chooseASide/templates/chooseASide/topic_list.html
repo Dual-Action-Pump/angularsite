@@ -12,10 +12,13 @@
         </form>
     </div>
 </div>
+<br>
+<br>
+<br>
 <div class="row">
     {% for topic in topics %}
         <div class="col-sm-4">
-            <div class="card card-block">
+            <div style="opacity: 0.2;" class="card card-block">
                   <div class="card-header">
                      <h4>{{topic.title}}</h4>
                   </div>
@@ -28,4 +31,25 @@
     {% endfor %}
 
 </div>
+
+<script>
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+    $( document ).ready(function() {
+        $('.card').each(function(i){
+            var el = $(this);
+          setTimeout(function() {
+          el.animate({bottom: '50', opacity: '1.0'}, 800);
+            }, i * 300);
+        });
+});
+</script>
+
 {% endblock %}
