@@ -1,10 +1,12 @@
 function sendVote(pk, topicURL) {
-    console.log($("#"+pk));
-    console.log(topicURL);
+    var score = $("#"+pk+"_score");
+    console.log(score);
     var opinion = $("#"+pk);
     var csrftoken = getCookie('csrftoken');
     $.post( topicURL, { vote: pk, csrfmiddlewaretoken: csrftoken}, function(data){
-        console.log(data);
+        var parsed = JSON.parse(data);
+        score.text(parsed['current_score']);
+        console.log(data['current_score']);
         opinion.text("Got it!");
     });
 }
