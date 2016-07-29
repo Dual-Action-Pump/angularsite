@@ -71,6 +71,7 @@ def increment_score(request):
     if request.method == 'POST':
         pk = request.POST.get('pk')
         to_increment = models.Thought.objects.get(pk=pk)
+        print(to_increment.score)
         to_increment.score += 1
         to_increment.save()
         return HttpResponse(json.dumps({"message": "Score incremented",
