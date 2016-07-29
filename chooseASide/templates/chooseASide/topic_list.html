@@ -1,10 +1,17 @@
 {%extends "chooseASide/base.html"%}
 
+{%block head%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/g/intro.js@2.2.0(introjs-rtl.min.css+introjs.min.css)">
+<script src="https://cdn.jsdelivr.net/intro.js/2.2.0/intro.min.js"></script>
+{%endblock%}
+
 {% block content %}
 <br>
-<div class="row">
+<div class="row" data-intro='Welcome to Angled Attitudes' data-step="1">
     <div class="col-sm-12 text-center">
-        <h2>Add a Topic</h2>
+        <h2 data-intro='All Topics get refreshed every 48 hours' data-step="2">Add a Topic</h2>
+
+
         <form method="post">
             {% csrf_token %}
             {{form}}
@@ -34,6 +41,7 @@
 
 </div>
 
+<script src="/static/js/vote.js"></script>
 <script>
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -44,6 +52,7 @@ function sleep(milliseconds) {
   }
 }
 
+
     $( document ).ready(function() {
         $('.card').each(function(i){
             var el = $(this);
@@ -51,6 +60,22 @@ function sleep(milliseconds) {
           el.animate({bottom: '50', opacity: '1.0'}, 800);
             }, i * 300);
         });
+
+        $('.card').eq(2).attr('data-intro', 'Add your thoughts. Earn more points, rank higher');
+        $('.card').eq(2).attr('data-step', '3');
+        $('.card').eq(3).attr('data-intro', 'Vote on other thoughts');
+        $('.card').eq(3).attr('data-step', '4');
+
+
+        if(getCookie('visited'))
+        {
+        console.log("Welcome back!");
+        }else
+        {
+           introJs().start();
+           setCookie('visited',1,365);
+           console.log("cookie set");
+        }
 });
 </script>
 
