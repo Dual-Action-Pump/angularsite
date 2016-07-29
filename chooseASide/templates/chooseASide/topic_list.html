@@ -54,29 +54,35 @@ function sleep(milliseconds) {
 
 
     $( document ).ready(function() {
-        $('.card').each(function(i){
-            var el = $(this);
-          setTimeout(function() {
-          el.animate({bottom: '50', opacity: '1.0'}, 800);
-            }, i * 300);
-        });
-
-        $('.card').eq(2).attr('data-intro', 'Add your thoughts. Earn more points, rank higher');
-        $('.card').eq(2).attr('data-step', '3');
-        $('.card').eq(3).attr('data-intro', 'Vote on other thoughts');
-        $('.card').eq(3).attr('data-step', '4');
 
 
+        $('.card').eq(2).children().eq(3).attr('data-intro', 'Add your thoughts. Earn more points, rank higher');
+        $('.card').eq(2).children().eq(3).attr('data-step', '3');
+        $('.card').eq(3).children().eq(2).attr('data-intro', 'Vote on other thoughts');
+        $('.card').eq(3).children().eq(2).attr('data-step', '4');
+        $('.card').eq(1).attr('data-intro', 'More to come including profiles and chances to win!!!');
+        $('.card').eq(1).attr('data-step', '5');
+
+
+        console.log("intro started");
         if(getCookie('visited'))
         {
         console.log("Welcome back!");
         }else
         {
            introJs().start();
-           setCookie('visited',1,365);
+           setCookie('visited',1,30);
            console.log("cookie set");
         }
+
+        $('.card').each(function(i){
+            var el = $(this);
+          setTimeout(function() {
+          el.animate({bottom: '50', opacity: '1.0'}, 800);
+            }, i * 300);
+        });
 });
 </script>
+<footer>Lost? <strong onclick="introJs().start();">Click here!</strong></footer>
 
 {% endblock %}

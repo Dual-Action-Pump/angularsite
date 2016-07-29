@@ -5,6 +5,7 @@ exdate.setDate(exdate.getDate() + exdays);
 var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
 document.cookie=c_name + "=" + c_value;
 }
+
 function getCookie(c_name)
 {
    var i,x,y,ARRcookies=document.cookie.split(";");
