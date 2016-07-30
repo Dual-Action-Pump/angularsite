@@ -6,7 +6,7 @@ body {
            }
 
 .card {
-    border-color: black
+    border-color: black;
 }
 
 .btn {
@@ -14,3 +14,16 @@ body {
 
     max-width: 100%;
 }
+/*
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em;
+
+}
+
+.topic{
+ display: inline-block;
+ width:  100%;
+}*/

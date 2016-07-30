@@ -23,25 +23,27 @@
 <br>
 <br>
 <div class="row">
-    {% for topic in topics %}
-        <div class="col-sm-4">
-            <div style="opacity: 0.2;" class="card card-block">
-                  <div class="card-header">
-                     <h4>{{topic.title}}</h4>
-                  </div>
-                <p class="card-text">{{topic.description}}</p>
-                <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
-                <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thought</a>
-                {% if topic.total_angles %}
-                    <p><strong>Angles:</strong> {{topic.total_angles}}</p>
-                {% endif %}
+    <div class="container-mason">
+        {% for topic in topics %}
+            <div class="col-sm-4 item">
+                <div style="opacity: 0.2;" class="card card-block">
+                      <div class="card-header">
+                         <h4>{{topic.title}}</h4>
+                      </div>
+                    <p class="card-text">{{topic.description}}</p>
+                    <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
+                    <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thought</a>
+                    {% if topic.total_angles %}
+                        <p><strong>Angles:</strong> {{topic.total_angles}}</p>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-    {% endfor %}
-
+        {% endfor %}
+    </div>
 </div>
 
-<script src="/static/js/vote.js"></script>
+<script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
 <script>
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -55,6 +57,11 @@ function sleep(milliseconds) {
 
     $( document ).ready(function() {
 
+        var $container = $('.container-mason');
+        $container.masonry({
+            columnWidth: '.item',
+            itemSelector: '.item'
+        });
 
         $('.card').eq(2).children().eq(3).attr('data-intro', 'Add your thoughts. Earn more points, rank higher');
         $('.card').eq(2).children().eq(3).attr('data-step', '3');
@@ -79,6 +86,7 @@ function sleep(milliseconds) {
             var el = $(this);
           setTimeout(function() {
           el.animate({bottom: '50', opacity: '1.0'}, 800);
+
             }, i * 300);
         });
 });
