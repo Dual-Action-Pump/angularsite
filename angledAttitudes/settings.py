@@ -135,16 +135,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 
-# # Production settings
-# SECURE_BROWSER_XSS_FILTER = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# CSRF_COOKIE_HTTPONLY = True
-# SESSION_COOKIE_SECURE = True
+# Production settings
+SECURE_BROWSER_XSS_FILTER = True
+CSRF_COOKIE_SECURE = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [] # "https://frozen-retreat-32190.herokuapp.com/"
+ALLOWED_HOSTS = ["https://frozen-retreat-32190.herokuapp.com/",]
 
 #eof
