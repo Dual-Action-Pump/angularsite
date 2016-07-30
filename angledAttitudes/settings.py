@@ -145,6 +145,6 @@ SESSION_COOKIE_SECURE = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://frozen-retreat-32190.herokuapp.com/",]
+ALLOWED_HOSTS = ["*"]
 
 #eof
