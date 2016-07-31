@@ -15,7 +15,7 @@ class ThoughtForm(forms.Form):
 
 class CreateTopicForm(forms.Form):
     title = forms.CharField(required=True, max_length=20)
-    description = forms.CharField(max_length=100, help_text="A description of the topic")
+    description = forms.CharField(max_length=100)
 
     def remove_non_ascii(self,text):
         stripped = text.rstrip()

@@ -99,3 +99,12 @@ def increment_score(request,pk):
                                         "current_score": to_increment.score}))
     else:
         return HttpResponse(json.dumps({"message": "Something went wrong"}))
+
+
+def leaderboards(request):
+    # top 5 thoughts by score and topics by number of thoughts
+    top_thoughts = models.Thought.objects.all().order_by("-score")[:5]
+    top_topics = models.Topic.objects.annotate(total_angles=Count('thought', distinct=True)).order_by("-total_angles")[:5]
+    return render(request, "chooseASide/leaderboards.html", {'top_thoughts': top_thoughts,
+                                                             'top_topics': top_topics})
+

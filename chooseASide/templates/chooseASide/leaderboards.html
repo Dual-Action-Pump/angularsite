@@ -1,0 +1,30 @@
+{% extends "chooseASide/base.html" %}
+
+{% block content %}
+<br>
+<br>
+<div class="row">
+    <h1 class="text-center">Leaderboard</h1>
+    <div class="col-sm-6">
+        <h2>Top Topics</h2>
+        <ol>
+            {% for topic in top_topics%}
+                <li>{{topic.title}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="col-sm-6">
+        <h2>Top Thoughts</h2>
+        <ol>
+        {% for thought in top_thoughts %}
+            <li>
+                <p>Score: <strong>{{thought.score}}</strong></p>
+                <p>    {{thought.opinion}}</p>
+                <p>Topic: <strong>{{thought.topic}}</strong> </p>
+            </li>
+        {% endfor %}
+        </ol>
+
+    </div>
+</div>
+{% endblock %}

@@ -8,15 +8,17 @@
 {% block content %}
 <br>
 <div class="row" data-intro='Welcome to Angled Attitudes' data-step="1">
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-8 text-center">
         <h2 data-intro='All Topics get refreshed every 48 hours' data-step="2">Add a Topic</h2>
-
-
         <form method="post">
             {% csrf_token %}
             {{form}}
             <button type="submit" value="submit" class="btn">Submit!</button>
         </form>
+    </div>
+    <div class="col-sm-4 text-center">
+        <h2>Leaderboards</h2>
+        <a href="{% url 'sides:leaderboards' %}">Check it out</a>
     </div>
 </div>
 <br>
