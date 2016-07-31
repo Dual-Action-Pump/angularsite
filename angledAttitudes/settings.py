@@ -130,16 +130,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-# STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'static'),
-)
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'assets')
 STATIC_URL = '/static/'
 
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # # Production settings
 SECURE_BROWSER_XSS_FILTER = True
@@ -149,7 +149,7 @@ CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # false doesnt allow for janky static implementations
+DEBUG = False # false doesnt allow for janky static implementations
 
 ALLOWED_HOSTS = ["*"]
 
