@@ -149,7 +149,7 @@ CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # false doesnt allow for janky static implementations
+DEBUG = True # false doesnt allow for janky static implementations
 
 ALLOWED_HOSTS = ["*"]
 
