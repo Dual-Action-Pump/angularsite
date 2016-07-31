@@ -16,8 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+from django.contrib.auth.views import login, logout
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # url(r'^', include('django.contrib.auth.urls')),
+    url(r'^login/$', view=login, kwargs={'template_name': 'registration/login.html'}, name="login"),
+    url(r'^logout/$', view=logout, kwargs={'template_name': 'registration/logout.html', 'next_page': '/'}, name="logout"),
     url(r'^', include("chooseASide.urls", namespace="sides")),
 ]
+urlpatterns += staticfiles_urlpatterns()

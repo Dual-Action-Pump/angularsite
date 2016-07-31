@@ -1,4 +1,20 @@
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+
+
 function sendVote(pk, topicURL) {
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                var csrftoken = getCookie('csrftoken');
+                console.log(csrftoken);
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
     var score = $("#"+pk+"_score");
     console.log(score);
     var opinion = $("#"+pk);

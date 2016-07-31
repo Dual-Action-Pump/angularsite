@@ -37,7 +37,8 @@
     </div>
     {% endfor %}
   </div>
-
-  <script src="/static/js/vote.js"></script>
+  {% csrf_token %}
+  {% load staticfiles %}
+  <script src="{% static 'js/vote.js' %}"></script>
 </div>
     {%endblock%}

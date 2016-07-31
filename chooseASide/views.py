@@ -42,7 +42,8 @@ def topic(request, topic):
     current_topic = get_object_or_404(models.Topic, title__contains=topic.replace("-", " "))
     pro_views = models.Thought.objects.filter(pro_or_con=True, topic=current_topic).order_by("-score")
     con_views = models.Thought.objects.filter(pro_or_con=False, topic=current_topic).order_by("-score")
-    total = pro_views.count() + con_views.count()
+    total = float(pro_views.count() + con_views.count())
+    print(str(total)+ " total")
     if total == 0:
         pro_percent = 0
         con_percent = 0

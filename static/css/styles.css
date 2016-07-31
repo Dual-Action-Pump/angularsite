@@ -1,0 +1,29 @@
+body {
+    background-color: #E9EDEF;
+     }
+#title-bar{
+    margin-top: 2.5%;
+           }
+
+.card {
+    border-color: black;
+}
+
+.btn {
+    white-space:normal !important;
+
+    max-width: 100%;
+}
+/*
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em;
+
+}
+
+.topic{
+ display: inline-block;
+ width:  100%;
+}*/
