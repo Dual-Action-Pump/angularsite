@@ -13,12 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,patterns
 from django.contrib import admin
 from django.conf.urls import include
 from django.contrib.auth.views import login, logout
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +26,7 @@ urlpatterns = [
     url(r'^logout/$', view=logout, kwargs={'template_name': 'registration/logout.html', 'next_page': '/'}, name="logout"),
     url(r'^', include("chooseASide.urls", namespace="sides")),
 ]
-urlpatterns += staticfiles_urlpatterns()
+from . import settings
+urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    )
