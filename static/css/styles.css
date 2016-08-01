@@ -1,6 +1,11 @@
 body {
-    background-color: #E9EDEF;
+    //background-color: #E9EDEF;
+    background-color: #316F61
      }
+.card {
+    background-color: #52BCA4
+}
+
 #title-bar{
     margin-top: 2.5%;
            }
