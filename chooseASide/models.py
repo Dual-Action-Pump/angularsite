@@ -23,16 +23,16 @@ class Topic(models.Model):
     def save(self, *args, **kwargs):
         regex = re.compile('[\',_.?"!]')
         self.slug = regex.sub("", self.title.replace(" ", "-"))
-        how_many_days = 2
-        naive = datetime.now()-timedelta(days=how_many_days)
-        days_ago_2 = naive.replace(tzinfo=pytz.timezone('US/Eastern'))
-
-        if self.created >= days_ago_2:
-            print("topic is still valid")
-            self.expired = False
-        else:
-            print("topic has expired")
-            self.expired = True
+        # how_many_days = 2
+        # naive = datetime.now()-timedelta(days=how_many_days)
+        # days_ago_2 = naive.replace(tzinfo=pytz.timezone('US/Eastern'))
+        #
+        # if self.created >= days_ago_2:
+        #     print("topic is still valid")
+        #     self.expired = False
+        # else:
+        #     print("topic has expired")
+        #     self.expired = True
         super(Topic, self).save(*args, **kwargs)
 
 
