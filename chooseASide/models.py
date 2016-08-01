@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import re
 from datetime import datetime, timedelta
-
+import pytz
 from django.db import models
 
 
@@ -24,7 +24,10 @@ class Topic(models.Model):
         regex = re.compile('[\',_.?"!]')
         self.slug = regex.sub("", self.title.replace(" ", "-"))
         how_many_days = 2
-        if datetime.now()-timedelta(days=how_many_days) >= self.created:
+        naive = datetime.now()-timedelta(days=how_many_days)
+        days_ago_2 = naive.replace(tzinfo=pytz.timezone('US/Eastern'))
+
+        if self.created >= days_ago_2:
             print("topic is still valid")
             self.expired = False
         else:
