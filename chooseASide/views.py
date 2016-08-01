@@ -48,8 +48,8 @@ def topic(request, topic):
         pro_percent = 0
         con_percent = 0
     else:
-        pro_percent = (pro_views.count()/total)*100
-        con_percent = (con_views.count()/total)*100
+        pro_percent = round((pro_views.count()/total)*100,ndigits=3)
+        con_percent = round((con_views.count()/total)*100, ndigits=3)
     return render(request, "chooseASide/topic.html", {'topic': current_topic,
                                                       'pros': pro_views,
                                                       'cons': con_views,
