@@ -24,7 +24,6 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '24=z1uo9xcc(z!i-#^vq^%*=a0-4b%qz6cso+1&9b0m-ip=olm'
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,6 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chooseASide',
+    'danger',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -155,4 +156,6 @@ DEBUG = False # false doesnt allow for janky static implementations
 
 ALLOWED_HOSTS = ["*"]
 
+
 #eof
+

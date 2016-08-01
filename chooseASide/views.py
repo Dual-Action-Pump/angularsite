@@ -22,7 +22,7 @@ def home(request):
     print(request.META.get("HTTP_USER_AGENT"))  # this
     print("____")
     print(request.META.get("REMOTE_ATTR"))
-    all_topics = models.Topic.objects.all().annotate(total_angles=Count('thought', distinct=True))
+    all_topics = models.Topic.objects.filter(expired=False).annotate(total_angles=Count('thought', distinct=True))
     if request.method == "POST":
         form = forms.CreateTopicForm(request.POST)
         if form.is_valid():

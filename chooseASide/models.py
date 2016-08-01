@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 import re
+from datetime import datetime, timedelta
 
 from django.db import models
 
@@ -10,7 +11,7 @@ class Topic(models.Model):
     popularity_score = models.IntegerField(default=0)
     description = models.CharField(max_length=100, default="")
     top_pro = models.ForeignKey("Thought", related_name="top_pro", blank=True, null=True)
-    top_con = models.ForeignKey("Thought", related_name="top_con", blank=True,null=True)
+    top_con = models.ForeignKey("Thought", related_name="top_con", blank=True, null=True)
     is_company = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.CharField(max_length=30)
@@ -22,7 +23,13 @@ class Topic(models.Model):
     def save(self, *args, **kwargs):
         regex = re.compile('[\',_.?"!]')
         self.slug = regex.sub("", self.title.replace(" ", "-"))
-
+        how_many_days = 2
+        if datetime.now()-timedelta(days=how_many_days) >= self.created:
+            print("topic is still valid")
+            self.expired = False
+        else:
+            print("topic has expired")
+            self.expired = True
         super(Topic, self).save(*args, **kwargs)
 
 
