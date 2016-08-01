@@ -38,3 +38,7 @@ body {
 .effect1 a:focus::before {
 	opacity: 0;
 }*/
+
+.effect2 a {
+    color:#000000;
+}
