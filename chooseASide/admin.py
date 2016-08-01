@@ -11,6 +11,10 @@ class ThoughtAdmin(admin.ModelAdmin):
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug')
 
+    def expired(modelAdmin, request, queryset):
+        for topic in queryset:
+            topic.save()
+    actions = [expired]
 
     def add_view(self, *args, **kwargs):
         self.exclude = ('slug',)
