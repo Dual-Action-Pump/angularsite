@@ -16,7 +16,7 @@
             <button type="submit" value="submit" class="btn">Submit!</button>
         </form>
     </div>
-    <div class="col-sm-4 text-center">
+    <div class="col-sm-4 text-center effect2">
         <h2>Leaderboards</h2>
         <a href="{% url 'sides:leaderboards' %}">Check it out</a>
     </div>
@@ -29,12 +29,14 @@
         {% for topic in topics %}
             <div class="col-sm-4 item">
                 <div style="opacity: 0.2;" class="card card-block">
-                      <div class="card-header">
-                         <h4>{{topic.title}}</h4>
-                      </div>
+
+                    <h4>{{topic.title}}</h4>
+
                     <p class="card-text">{{topic.description}}</p>
-                    <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
-                    <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thoughts</a>
+                    <div class="effect1">
+                        <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
+                        <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thoughts</a>
+                    </div>
                     {% if topic.total_angles %}
                         <p><strong>Angles:</strong> {{topic.total_angles}}</p>
                     {% endif %}
