@@ -10,12 +10,19 @@ from ipware.ip import get_ip
 from . import models
 from . import forms
 
-def handler404(request):
+
+def not_found(request):
     response = render_to_response('chooseASide/404.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 404
     return response
 
+
+def error500(request):
+    response = render_to_response('chooseASide/500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
 
 # Create your views here.
 def home(request):

@@ -11,3 +11,7 @@ urlpatterns = [
 ]
 
 
+from django.conf.urls import (handler404, handler500)
+
+handler404 = 'views.not_found'
+handler500 = 'views.error500'
