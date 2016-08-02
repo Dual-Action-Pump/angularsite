@@ -25,7 +25,7 @@
       <div class="card card-block">
         <h6 id="{{pro.pk}}_score">Score: {{pro.score}}</h6>
         <p>{{pro.opinion}}</p>
-        <button class="btn flow-text" style="word-wrap:break-word;" id="{{pro.pk}}" onclick="sendVote({{pro.pk}}, '{% url 'sides:score'  pk=pro.pk %}');">Like this thought? Click to vote for it</button>
+        <button class="btn flow-text" style="word-wrap:break-word;" id="{{pro.pk}}" onclick="sendVote({{pro.pk}}, '{% url 'sides:score'  pk=pro.pk %}');">Like this angle? Click to vote for it</button>
       </div>
     {% endfor %}
   </div>
@@ -35,7 +35,7 @@
     <div class="card card-block">
         <h6 id="{{con.pk}}_score">Score: {{con.score}}</h6>
         <p>{{con.opinion}}</p>
-        <button class="btn" id="{{con.pk}}" onclick="sendVote({{con.pk}}, '{% url 'sides:score'  pk=con.pk %}');">Like this thought? Click to vote for it</button>
+        <button class="btn" id="{{con.pk}}" onclick="sendVote({{con.pk}}, '{% url 'sides:score'  pk=con.pk %}');">Like this angle? Click to vote for it</button>
     </div>
     {% endfor %}
   </div>
