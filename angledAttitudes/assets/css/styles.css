@@ -22,7 +22,9 @@ body {
 
 
 .effect1 a {
-	color: #307C40;
+	color: #30647C;
+	font-weight: bold;
+
 }
 /*
 .effect1 a::before {
@@ -41,4 +43,8 @@ body {
 
 .effect2 a {
     color:#000000;
+}
+
+#add-topic{
+    margin-top: 5px;
 }

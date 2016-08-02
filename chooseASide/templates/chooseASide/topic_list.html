@@ -9,16 +9,23 @@
 <br>
 <div class="row" data-intro='Welcome to Angled Attitudes' data-step="1">
     <div class="col-sm-8 text-center">
-        <h2 data-intro='All Topics get refreshed every 48 hours' data-step="2">Add a Topic</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{form}}
-            <button type="submit" value="submit" class="btn">Submit!</button>
-        </form>
+        <div class="card card-content no-anim">
+            <h2 id="add-topic" data-intro='All Topics get refreshed every 48 hours' data-step="2">Add a Topic</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" value="submit" class="btn">Submit!</button>
+            </form>
+            <br>
+        </div>
     </div>
-    <div class="col-sm-4 text-center effect2">
-        <h2>Leaderboards</h2>
-        <a href="{% url 'sides:leaderboards' %}">Check it out</a>
+    <div class="col-sm-4 text-center">
+        <div class="card card-block no-anim">
+            <h2 class=" effect2 card-text">Leaderboards</h2>
+            <div class="effect1">
+                <a class="card-link" href="{% url 'sides:leaderboards' %}">Check it out</a>
+            </div>
+        </div>
     </div>
 </div>
 <br>
@@ -35,7 +42,7 @@
                     <p class="card-text">{{topic.description}}</p>
                     <div class="effect1">
                         <a class="card-link" href="{% url 'sides:topic'  topic=topic.slug %}">View Topic</a>
-                        <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your thoughts</a>
+                        <a class="card-link pull-right" href="{% url 'sides:create_angle'  topic=topic.slug %}">Share your Angle</a>
                     </div>
                     {% if topic.total_angles %}
                         <p><strong>Angles:</strong> {{topic.total_angles}}</p>
@@ -67,9 +74,9 @@ function sleep(milliseconds) {
             itemSelector: '.item'
         });
 
-        $('.card').eq(2).children().eq(3).attr('data-intro', 'Add your thoughts. Earn more points, rank higher');
+        $('.card').eq(2).children().eq(3).attr('data-intro', 'Add your angles. Earn more points, rank higher');
         $('.card').eq(2).children().eq(3).attr('data-step', '3');
-        $('.card').eq(3).children().eq(2).attr('data-intro', 'Vote on other thoughts');
+        $('.card').eq(3).children().eq(2).attr('data-intro', 'Vote on other angles');
         $('.card').eq(3).children().eq(2).attr('data-step', '4');
         $('.card').eq(1).attr('data-intro', 'More to come including profiles and chances to win!!!');
         $('.card').eq(1).attr('data-step', '5');
@@ -89,7 +96,16 @@ function sleep(milliseconds) {
         $('.card').each(function(i){
             var el = $(this);
           setTimeout(function() {
+          if(el.hasClass("no-anim")){
+            console.log("no-anim")
+          } else{
+
           el.animate({bottom: '50', opacity: '1.0'}, 800);
+          }
+
+
+
+
 
             }, i * 300);
         });
