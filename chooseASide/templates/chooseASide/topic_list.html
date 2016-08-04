@@ -13,7 +13,13 @@
             <h2 id="add-topic" data-intro='All Topics get refreshed every 48 hours' data-step="2">Add a Topic</h2>
             <form method="post">
                 {% csrf_token %}
-                {{form}}
+                {% for field in form %}
+                    <div class="form-control">
+                        {{ field.errors }}
+                        {{ field.label_tag }}: {{ field }}
+                    </div>
+                {% endfor %}
+
                 <button type="submit" value="submit" class="btn">Submit!</button>
             </form>
             <br>
