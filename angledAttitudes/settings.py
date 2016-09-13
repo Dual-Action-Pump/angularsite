@@ -73,16 +73,16 @@ WSGI_APPLICATION = 'angledAttitudes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES = {
 
-    #
-    # # 'default': {
-    # #     'ENGINE': 'django.db.backends.sqlite3',
-    # #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # # }
-    # #
+
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     #     # 'NAME': 'angles',
@@ -91,9 +91,9 @@ DATABASES = {
     #     #     # 'HOST': 'localhost',
     #     #     # 'PORT': '3306',
     # }
-    'default': {}
+    # 'default': {}
 }
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -145,14 +145,14 @@ STATICFILES_DIRS = (
 
 
 # # Production settings
-SECURE_BROWSER_XSS_FILTER = True
-CSRF_COOKIE_SECURE = False # needed for voting
-SECURE_CONTENT_TYPE_NOSNIFF = True
-CSRF_COOKIE_HTTPONLY = False
-SESSION_COOKIE_SECURE = True
+# SECURE_BROWSER_XSS_FILTER = True
+# CSRF_COOKIE_SECURE = False # needed for voting
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# CSRF_COOKIE_HTTPONLY = False
+# SESSION_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # false doesnt allow for janky static implementations
+DEBUG = True # false doesnt allow for janky static implementations
 
 ALLOWED_HOSTS = ["*"]
 
