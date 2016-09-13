@@ -145,14 +145,14 @@ STATICFILES_DIRS = (
 
 
 # # Production settings
-# SECURE_BROWSER_XSS_FILTER = True
-# CSRF_COOKIE_SECURE = False # needed for voting
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# CSRF_COOKIE_HTTPONLY = False
-# SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+CSRF_COOKIE_SECURE = False # needed for voting
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # false doesnt allow for janky static implementations
+DEBUG = False # false doesnt allow for janky static implementations
 
 ALLOWED_HOSTS = ["*"]
 
