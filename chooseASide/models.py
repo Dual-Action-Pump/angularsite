@@ -44,7 +44,7 @@ class Thought(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     identifier1 = models.CharField(help_text="Ip address of the user", max_length=200, default="")
     identifier2 = models.CharField(help_text="Device user is posting from", max_length=500, default="")
-    expired = models.BooleanField(default=False)
+    # expired = models.BooleanField(default=False)
 
     def __str__(self):
         return self.opinion[:30]
