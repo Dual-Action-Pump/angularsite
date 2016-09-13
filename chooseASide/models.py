@@ -15,7 +15,7 @@ class Topic(models.Model):
     is_company = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.CharField(max_length=30)
-    expired = models.BooleanField(default=False)
+    # expired = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
